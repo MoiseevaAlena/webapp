@@ -1,6 +1,5 @@
 package ru.itpark.servlet;
 
-import lombok.var;
 import ru.itpark.service.FileService;
 
 import javax.naming.InitialContext;

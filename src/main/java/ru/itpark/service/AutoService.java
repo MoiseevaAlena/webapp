@@ -1,6 +1,5 @@
 package ru.itpark.service;
 
-import lombok.var;
 import ru.itpark.domain.Auto;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
