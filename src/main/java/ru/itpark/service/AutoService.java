@@ -43,6 +43,7 @@ public class AutoService {
     }
 
     public void create(String name, String description, String image) throws SQLException {
+        System.out.println("зашли в метод create AutoService");
         try(var conn = ds.getConnection()) {
             try(var stmt = conn.prepareStatement("INSERT INTO autos (id, name, description, image) VALUES (?, ?, ?, ?)")) {
                 stmt.setString(1, UUID.randomUUID().toString());

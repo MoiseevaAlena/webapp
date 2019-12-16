@@ -43,15 +43,20 @@ public class CatalogServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("зашли в метод Post в CatalogServlet");
         try {
             req.setCharacterEncoding("UTF-8");
             var name = req.getParameter("name");
             var description = req.getParameter("description");
             var part = req.getPart("image");
 
+            System.out.println("Получили данные, name = " + name + "description=" + description);
+
             var image = fileService.writeFile(part);
 
+            System.out.println("начинаем вызывать метож для записи в таблицу");
             autoService.create(name, description, image);
+            System.out.println("Записали данные в таблицу");
             resp.sendRedirect(String.join("/", req.getContextPath(), req.getServletPath()));
         } catch (SQLException e) {
             e.printStackTrace();

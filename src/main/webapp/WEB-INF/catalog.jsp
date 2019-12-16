@@ -33,6 +33,7 @@
                 <% } %>
                 <% } %>
             </div>
+
             <form action="<%= request.getContextPath() %>" method="post" enctype="multipart/form-data" class="nt-3">
                 <dif class="form-group">
                     <label for="name"> Auto Name </label>
